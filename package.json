@@ -1,0 +1,13 @@
+{
+  "name": "citas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:quest": "cypress open --config redirectionLimit=200"
+  },
+  "dependencies": {
+    "cypress": "^8.6.0",
+    "random-useragent": "^0.5.0"
+  }
+}
