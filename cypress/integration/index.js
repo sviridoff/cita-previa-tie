@@ -9,7 +9,7 @@ function fillForm() {
       'user-agent': randomUseragent.getRandom(),
     }
   });
-  cy.get('#form').select(config.country);
+  cy.get('#form').select(config.city);
   cy.get('#btnAceptar').click();
   cy.get('.mf-input__l').select(config.process);
   cy.get('#btnAceptar').click();
