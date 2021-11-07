@@ -11,12 +11,13 @@ function fillForm() {
   });
   cy.get('#form').select(config.city);
   cy.get('#btnAceptar').click();
-  cy.get('.mf-input__l').select(config.process);
+  cy.get('#sede').select(config.placeAddress);
+  cy.wait(1000);
+  cy.get('#divGrupoTramites select').select(config.process);
   cy.get('#btnAceptar').click();
   cy.get('#btnEntrar').click();
   cy.get('#txtIdCitado').type(config.documentId);
   cy.get('#txtDesCitado').type(config.fullName);
-
   cy.get('body').then((body) => {
     if (body.find('#txtPaisNac').length) {
       cy.get('#txtPaisNac').select(config.country);
@@ -36,6 +37,7 @@ function fillForm() {
     } else {
       cy.get('#idSede').select(config.placeAddress);
       cy.get('#btnSiguiente').click();
+
       cy.get('#txtTelefonoCitado').type(config.phone);
 
       // cy.pause();
